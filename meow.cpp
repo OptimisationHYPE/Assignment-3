@@ -66,7 +66,6 @@ void format_print (const vector<float> &S, const vector<float> &d, const vector<
         cout << std::setw(5) << d[i];
     }
     cout<< std::setw(7) << sum << endl;
-    cout << endl;
 }
 
 //all values are positive and not all are zeros (if methods applicalable)
@@ -83,6 +82,7 @@ int check (const vector<float> &S, const vector<float> &d, const vector<vector<f
     if (k == 0) {
         return 0;
     }
+    k = 0;
     for (int i = 0; i < d.size(); i++) {
         if (d[i] < 0) {
             return 0;
@@ -94,6 +94,7 @@ int check (const vector<float> &S, const vector<float> &d, const vector<vector<f
     if (k == 0) {
         return 0;
     }
+    k = 0;
     for (int i = 0; i < C.size(); i++) {
         for (int j = 0; j < C[i].size(); j++) {
             if (C[i][j] < 0) {
@@ -115,6 +116,8 @@ int balanced (const vector<float> &S, const vector<float> &d) {
     int s1 = 0, s2 = 0;
     for (int i = 0; i < S.size(); i++) {
         s1 += S[i];
+    }
+    for (int i = 0; i < d.size(); i++) {
         s2 += d[i];
     }
     if (s1 != s2) {
@@ -396,9 +399,10 @@ int main() {
     }
     cout << "Transportation problem:"<< endl;
     format_print(S, d, C);
-    cout << "Russell’s approximation method:\n"  << russell(S, d, C) << endl;
-    cout << "Vogel’s approximation method:\n"<< vogel(S, d, C) << endl;
-    cout << "North-West corner method:\n" << northwest(S, d, C) << endl;
+    cout << endl;
+    cout << "Russell’s approximation method:\n"  << russell(S, d, C) << endl << endl;
+    cout << "Vogel’s approximation method:\n"<< vogel(S, d, C) << endl << endl;
+    cout << "North-West corner method:\n" << northwest(S, d, C) << endl << endl;
 
     return 0;
 }
