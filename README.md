@@ -1,4 +1,4 @@
-# Programming Task 3 |  Interior-Point Algorithm
+# Programming Task 3 |  Russell’s approximation | Vogel’s approximation | North-West corner 
 **Introduction to Optimization - Fall 2024**
 
 ## Team
